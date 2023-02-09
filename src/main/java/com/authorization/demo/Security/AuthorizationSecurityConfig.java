@@ -98,7 +98,7 @@ public class AuthorizationSecurityConfig {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
                 .clientId("clientDemo")
                 .clientSecret("{noop}123")
-                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
 //                .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)

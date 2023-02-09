@@ -17,8 +17,11 @@ public class IdTokenCustomizerConfig {
             if (OidcParameterNames.ID_TOKEN.equals(context.getTokenType().getValue())) {
                 OidcUserInfo userInfo = userInfoService.loadUser(
                         context.getPrincipal().getName());
-                context.getClaims().claims(claims ->
-                        claims.putAll(userInfo.getClaims()));
+                context.getClaims().claims((claims) ->{
+                            claims.putAll(userInfo.getClaims());
+                            claims.put("binding_id","1111111");
+                        }
+                        );
             }
         };
     }
